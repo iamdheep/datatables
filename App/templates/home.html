@@ -1,5 +1,37 @@
 {% extends 'base.html' %}
 
+
+{% block navbar-content %}
+<i style="color : yellowgreen;" class="fas fa-user-alt"></i>&nbsp;&nbsp; Employee List
+{% endblock %}
+
 {% block content %}
-<h1>Hello World</h1>
+<div class="container">
+    <br><br><br>
+    <table class="table table-bordered" id = "example" style ="text-align: center;">
+        <thead class="table-success">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Occupation</th>
+                <th>Salary</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <!-- data from backend -->
+        {% for employees in employee %}
+        <tr>
+            <td>{{employees.id}}</td>
+            <td>{{employees.name}}</td>
+            <td>{{employees.email}}</td>
+            <td>{{employees.occupation}}</td>
+            <td>{{employees.salary}}</td>
+            <td>{{employees.gender}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<br><br><br><br>
 {% endblock %}            
